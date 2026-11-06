@@ -618,6 +618,9 @@ fn run_ui_part7(app: &mut VectorcraftApp, id: &str, p: &Value) -> Option<Result<
             app.ui.about = true;
             Ok(Value::Null)
         }
+        // air/OS installs VectorCraft as a package: SoftwareUpdater (pkgman) updates it, and
+        // craft-update has no package for the platform to offer.
+        "help.checkForUpdates" if cfg!(target_os = "haiku") => Err("VectorCraft for air/OS is updated by SoftwareUpdater with the system's packages".into()),
         "help.checkForUpdates" => crate::updates_ui::check(app),
         "help.commandPalette" => {
             app.ui.palette_open = !app.ui.palette_open;

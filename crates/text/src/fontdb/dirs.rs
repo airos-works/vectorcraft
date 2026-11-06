@@ -141,6 +141,13 @@ pub fn system_font_dirs() -> Vec<PathBuf> {
                 dirs.push(e.path());
             }
         }
+    } else if cfg!(target_os = "haiku") {
+        // Haiku's font folders (`B_SYSTEM_FONTS_DIRECTORY` and its non-packaged and user
+        // counterparts), the ones app_server reads.
+        dirs.extend(["/boot/system/data/fonts", "/boot/system/non-packaged/data/fonts"].map(Into::into));
+        if let Some(h) = &home {
+            dirs.extend([h.join("config/data/fonts"), h.join("config/non-packaged/data/fonts")]);
+        }
     } else if cfg!(windows) {
         let root = std::env::var_os("WINDIR").map(PathBuf::from).unwrap_or_else(|| "C:\\Windows".into());
         dirs.push(root.join("Fonts"));

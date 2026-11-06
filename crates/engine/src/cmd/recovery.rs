@@ -351,7 +351,7 @@ impl RecoveryStore for FolderStore {
             .truncate(false)
             .open(&path)
             .map_err(|e| format!("{}: {e}", path.display()))?;
-        match file.try_lock() {
+        match try_lock(&file) {
             Ok(()) => Ok(Lock::Held(Box::new(file))),
             Err(std::fs::TryLockError::WouldBlock) => Ok(Lock::Busy),
             Err(std::fs::TryLockError::Error(e)) => Err(format!("{}: {e}", path.display())),
@@ -364,6 +364,25 @@ impl RecoveryStore for FolderStore {
             let _ = std::fs::remove_file(dir.join(LOCK_FILE));
             let _ = std::fs::remove_dir(&dir);
         }
+    }
+}
+
+/// `File::try_lock`. Haiku and air/OS: the standard library has no file locks there (it answers
+/// "unsupported"), but the kernel has `flock`, so a second running copy sees a live owner's area as
+/// in use, not as left behind by a crash.
+#[cfg(not(target_os = "haiku"))]
+fn try_lock(file: &std::fs::File) -> std::result::Result<(), std::fs::TryLockError> {
+    file.try_lock()
+}
+
+#[cfg(target_os = "haiku")]
+fn try_lock(file: &std::fs::File) -> std::result::Result<(), std::fs::TryLockError> {
+    match rustix::fs::flock(file, rustix::fs::FlockOperation::NonBlockingLockExclusive) {
+        Ok(()) => Ok(()),
+        Err(e) => match std::io::Error::from(e) {
+            e if e.kind() == std::io::ErrorKind::WouldBlock => Err(std::fs::TryLockError::WouldBlock),
+            e => Err(std::fs::TryLockError::Error(e)),
+        },
     }
 }
 

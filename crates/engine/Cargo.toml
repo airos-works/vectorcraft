@@ -54,6 +54,10 @@ log = { workspace = true }
 [target.'cfg(unix)'.dependencies]
 rustix = { workspace = true, features = ["std", "process"] }
 
+# Haiku and air/OS: `flock` for the recovery areas' locks (std has no file locks there).
+[target.'cfg(target_os = "haiku")'.dependencies]
+rustix = { workspace = true, features = ["std", "fs", "process"] }
+
 [dev-dependencies]
 vectorcraft-affinity = { workspace = true, features = ["synth"] }
 crc32fast = { workspace = true }

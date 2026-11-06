@@ -51,6 +51,8 @@ fn platform_dir(os: &str, legacy: bool, env: &impl Fn(&str) -> Option<OsString>)
     match os {
         "macos" => env("HOME").map(|p| PathBuf::from(p).join("Library/Application Support").join(name)),
         "windows" => env("APPDATA").map(|p| PathBuf::from(p).join(name)),
+        // Haiku and air/OS keep each application's settings in ~/config/settings/<name>.
+        "haiku" => env("HOME").map(|p| PathBuf::from(p).join("config/settings").join(name)),
         _ => env("XDG_CONFIG_HOME").map(PathBuf::from).or_else(|| env("HOME").map(|p| PathBuf::from(p).join(".config"))).map(|p| p.join(lower)),
     }
 }
