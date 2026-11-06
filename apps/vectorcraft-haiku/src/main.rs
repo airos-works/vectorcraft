@@ -10,6 +10,9 @@
 //!
 //! Usage: `VectorCraft [--control PORT [--automation-read-root DIR]… [--automation-write-root DIR]…] [FILE…]`,
 //! as the desktop app.
+// The presenters' types (a wgpu device behind an Arc, shared with the direct daemon thread) prove
+// `Send` deeper than the default limit (rust-lang/rust#159228).
+#![recursion_limit = "256"]
 #![deny(clippy::unwrap_used, clippy::expect_used, clippy::panic, clippy::unimplemented, clippy::todo, clippy::unreachable)]
 // Elsewhere only the platform-neutral parts build (and are tested).
 #![cfg_attr(not(target_os = "haiku"), allow(dead_code))]
