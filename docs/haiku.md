@@ -105,3 +105,30 @@ host prints with craft-libs' hayro, matching the hayro-interpret upstream alread
 control channel as on the other desktops (`docs/control-protocol.md`); a `--control` launch needs
 a copy of its own (one copy runs per executable file). `RUST_LOG=warn,vectorcraft_haiku=debug`
 logs each frame's timings.
+
+## Hardware results
+
+### 0.21.0 on the X399 — 7 November 2026
+
+NVIDIA GTX 1070 with the system's NVK (Mesa 25.3.0-devel), 3840×2160 at 200 %, a test copy with
+its resources (`rc` + `xres`), settings in a test `VECTORCRAFT_CONFIG_DIR`:
+
+- Started on Vulkan ("NVIDIA GeForce GTX 1070 (NVK GP104-A)", changed-tile readback) and drew the
+  start screen, then a document, with the native menu bar.
+- Through the control channel: opened an SVG (system font "Noto Sans" for its text), drew a
+  rectangle, exported a PNG and saved a `.vectorcraft` (both typed for Tracker), copied (the SVG
+  code reached the system clipboard) and pasted.
+- A `tablet-probe` stroke (the HID add-on's messages) drew with the Blob Brush.
+- Layers floated into a native window of its own (`window.panel.float`).
+- A second launch with a relative path from Terminal handed the file to the running copy, which
+  opened it as a tab, and ended.
+- `VECTORCRAFT_RENDERER=cpu` drew everything with the software rasteriser; Data Recovery wrote its
+  copies under its `flock`ed `.lock` after a minute.
+- Quit (`hey VectorCraft quit`) asked about each unsaved document; Don't Save quit. Quitting with
+  nothing unsaved quit at once. No crash and nothing in the syslog.
+- File › Print to the "PS-File" printer (PostScript driver to a local `nc`): the driver's Paper
+  setup opened once (answered with `tools/haiku/window-probe.cpp`'s `enter`) and the job spooled
+  one sheet of PostScript in 9 s.
+
+Not tried: `VECTORCRAFT_PRESENT=direct`, a lost device at run time, a real tablet and an input
+method (x399 has neither).
