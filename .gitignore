@@ -7,3 +7,6 @@ plan/
 .DS_Store
 # A craft-fonts checkout for CRAFT_FONTS_DIR (CI and release workflows check it out here)
 /craft-fonts
+# air/OS: packages from tools/haiku/package.sh, and Python caches of the icon script
+/artifacts
+__pycache__/

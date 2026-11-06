@@ -1,0 +1,20 @@
+name vectorcraft
+version 0.21.0~airos1-1
+architecture x86_64
+summary "Vector illustration app"
+description "VectorCraft for air/OS: the Rust vector illustration app with native windows, menus, file panels, clipboard, printing and pen tablets; Vulkan rendering on supported hardware and a software fallback."
+packager "VectorCraft for air/OS"
+vendor "jmgasper"
+copyrights { "2026 VectorCraft contributors" }
+licenses { "MIT" "Apache v2" }
+urls { "https://github.com/airos-works/vectorcraft" }
+provides {
+    vectorcraft = 0.21.0
+    app:VectorCraft = 0.21.0
+}
+requires {
+    haiku >= r1~beta6
+    lib:libstdc++
+    lib:libgcc_s
+}
+post-install-scripts { "boot/post-install/vectorcraft.sh" }

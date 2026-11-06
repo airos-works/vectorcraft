@@ -22,6 +22,8 @@ Generated-in-code art is original and has no file to list. This covers the defau
 | `docs/brand/artcraft-mark-black.svg` | ArtCraft team (project owner) | https://getartcraft.com/ | ArtCraft trademark, see docs/brand/LICENSE-brand.txt (not open source) | Used in README only; not shipped in the app |
 | `docs/brand/artcraft-mark.png` | ArtCraft team (project owner) | https://getartcraft.com/ | ArtCraft trademark, see docs/brand/LICENSE-brand.txt (not open source) | Used in README only; not shipped in the app |
 | `docs/brand/artcraft-mark.svg` | ArtCraft team (project owner) | https://getartcraft.com/ | ArtCraft trademark, see docs/brand/LICENSE-brand.txt (not open source) | Used in README only; not shipped in the app |
+| `apps/vectorcraft-haiku/resources/VectorCraft.hvif` | VectorCraft for air/OS contributors | Original vector icon drawn in code by `tools/haiku/make-icon.py` (an artboard, a Bézier curve with its handles and a pen nib) | MIT OR Apache-2.0 | air/OS (Haiku) application icon |
+| `apps/vectorcraft-haiku/resources/VectorCraft.svg` | VectorCraft for air/OS contributors | SVG preview of `VectorCraft.hvif`, written by `tools/haiku/make-icon.py` | MIT OR Apache-2.0 | Preview only, not shipped |
 | `assets/app-icon/LICENSE.txt` | (licence/readme text) | VectorCraft | MIT OR Apache-2.0 |  |
 | `assets/app-icon/README.md` | (licence/readme text) | VectorCraft | MIT OR Apache-2.0 |  |
 | `assets/app-icon/hicolor/128x128/apps/ai.storyteller.vectorcraft.png` | Project owner (ArtCraft team) | Original artwork drawn in ArtCraft for VectorCraft, vectorised and rendered by `packaging/icons.sh` | MIT OR Apache-2.0 (`assets/app-icon/LICENSE.txt`) | App icon (engraved dragon) |

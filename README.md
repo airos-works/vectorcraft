@@ -12,7 +12,9 @@
   <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.vectorcraft.png" width="128" height="128" alt="VectorCraft icon: an engraved dragon on a red tile">
 </p>
 
-<h1 align="center">VectorCraft</h1>
+<h1 align="center">VectorCraft for air/OS</h1>
+
+This independent fork ports [VectorCraft by the ArtCraft team](https://github.com/storytold/vectorcraft) to air/OS (Haiku), using a native Be API host and Vulkan rendering. See [build instructions and validation](docs/haiku.md). The upstream project does not maintain or support this port.
 
 <p align="center">
   <b>Vector illustration; an open-source, modern vector art application, built in pure Rust.</b>
@@ -312,6 +314,12 @@ Installers and executables are code-signed.
 | Build | File |
 |---|---|
 | x86_64 | `vectorcraft-<ver>-freebsd-x86_64.tar.gz` |
+
+### air/OS
+
+VectorCraft for air/OS is in the air/OS images (Deskbar › Applications › Media) and is updated with the
+system's packages by SoftwareUpdater. Packages for x86_64 and arm64 are built by air/OS CI from this
+fork; how the native host works, and how to build it, is in [docs/haiku.md](docs/haiku.md).
 
 ### Web (WebAssembly)
 

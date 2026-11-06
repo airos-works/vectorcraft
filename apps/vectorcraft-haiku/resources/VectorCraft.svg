@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="s0" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2891 0.0000 -0.0000 0.2891 42.5000 52.0000)">
+      <stop offset="0.000" stop-color="#000000" stop-opacity="0.255"/>
+      <stop offset="0.749" stop-color="#000000" stop-opacity="0.157"/>
+      <stop offset="1.000" stop-color="#000000" stop-opacity="0.000"/>
+    </linearGradient>
+    <linearGradient id="s1" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.2969 0.3906 -0.3906 0.2969 29.0000 31.0000)">
+      <stop offset="0.000" stop-color="#fffbf2" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#dcd3c2" stop-opacity="1.000"/>
+    </linearGradient>
+    <linearGradient id="s7" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.1094 0.1094 -0.1094 0.1094 51.0000 39.0000)">
+      <stop offset="0.000" stop-color="#f58a63" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#b63a24" stop-opacity="1.000"/>
+    </linearGradient>
+    <linearGradient id="s10" gradientUnits="userSpaceOnUse" x1="-64" y1="0" x2="64" y2="0" gradientTransform="matrix(0.0781 0.0781 -0.0781 0.0781 55.0000 45.0000)">
+      <stop offset="0.000" stop-color="#6b7586" stop-opacity="1.000"/>
+      <stop offset="1.000" stop-color="#262b33" stop-opacity="1.000"/>
+    </linearGradient>
+  </defs>
+  <path d="M 5.000 46.000 L 44.000 58.000 L 62.000 58.000 L 30.000 46.000 L 5.000 46.000 Z" fill="url(#s0)"/>
+  <path d="M 5.000 9.000 L 45.000 21.000 L 45.000 59.000 L 5.000 47.000 L 5.000 9.000 Z" fill="url(#s1)"/>
+  <path d="M 5.000 9.000 L 45.000 21.000 L 45.000 59.000 L 5.000 47.000 L 5.000 9.000 Z" fill="none" stroke="#17191c" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 9.000 40.196 C 15.000 26.000 19.000 39.196 25.000 35.000 C 31.000 28.804 35.000 22.000 41.000 27.804" fill="none" stroke="#e8573f" stroke-width="3.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 18.000 39.902 L 32.000 30.098" fill="none" stroke="#657184" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 19.598 39.902 C 19.598 40.784 18.882 41.500 18.000 41.500 C 17.118 41.500 16.402 40.784 16.402 39.902 C 16.402 39.020 17.118 38.304 18.000 38.304 C 18.882 38.304 19.598 39.020 19.598 39.902 Z" fill="#ffffff"/>
+  <path d="M 19.598 39.902 C 19.598 40.784 18.882 41.500 18.000 41.500 C 17.118 41.500 16.402 40.784 16.402 39.902 C 16.402 39.020 17.118 38.304 18.000 38.304 C 18.882 38.304 19.598 39.020 19.598 39.902 Z" fill="none" stroke="#465061" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 33.598 30.098 C 33.598 30.980 32.882 31.696 32.000 31.696 C 31.118 31.696 30.402 30.980 30.402 30.098 C 30.402 29.216 31.118 28.500 32.000 28.500 C 32.882 28.500 33.598 29.216 33.598 30.098 Z" fill="#ffffff"/>
+  <path d="M 33.598 30.098 C 33.598 30.980 32.882 31.696 32.000 31.696 C 31.118 31.696 30.402 30.980 30.402 30.098 C 30.402 29.216 31.118 28.500 32.000 28.500 C 32.882 28.500 33.598 29.216 33.598 30.098 Z" fill="none" stroke="#465061" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 6.804 38.000 L 11.196 38.000 L 11.196 42.402 L 6.804 42.402 L 6.804 38.000 Z" fill="#ffffff"/>
+  <path d="M 6.804 38.000 L 11.196 38.000 L 11.196 42.402 L 6.804 42.402 L 6.804 38.000 Z" fill="none" stroke="#17191c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 22.804 32.804 L 27.196 32.804 L 27.196 37.196 L 22.804 37.196 L 22.804 32.804 Z" fill="#ffffff"/>
+  <path d="M 22.804 32.804 L 27.196 32.804 L 27.196 37.196 L 22.804 37.196 L 22.804 32.804 Z" fill="none" stroke="#17191c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 38.804 25.598 L 43.196 25.598 L 43.196 30.000 L 38.804 30.000 L 38.804 25.598 Z" fill="#ffffff"/>
+  <path d="M 38.804 25.598 L 43.196 25.598 L 43.196 30.000 L 38.804 30.000 L 38.804 25.598 Z" fill="none" stroke="#17191c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 42.000 31.000 L 43.000 42.000 L 48.000 47.000 L 59.000 36.000 L 54.000 31.000 L 42.000 31.000 Z" fill="url(#s7)"/>
+  <path d="M 42.000 31.000 L 43.000 42.000 L 48.000 47.000 L 59.000 36.000 L 54.000 31.000 L 42.000 31.000 Z" fill="none" stroke="#17191c" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 42.000 31.000 L 48.500 37.500" fill="none" stroke="#6e2012" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 50.804 38.000 C 50.804 38.990 49.990 39.804 49.000 39.804 C 48.010 39.804 47.196 38.990 47.196 38.000 C 47.196 37.010 48.010 36.196 49.000 36.196 C 49.990 36.196 50.804 37.010 50.804 38.000 Z" fill="#fff4e8"/>
+  <path d="M 50.804 38.000 C 50.804 38.990 49.990 39.804 49.000 39.804 C 48.010 39.804 47.196 38.990 47.196 38.000 C 47.196 37.010 48.010 36.196 49.000 36.196 C 49.990 36.196 50.804 37.010 50.804 38.000 Z" fill="none" stroke="#17191c" stroke-width="1.00" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M 48.000 47.000 L 59.000 36.000 L 63.000 40.000 L 52.000 51.000 L 48.000 47.000 Z" fill="url(#s10)"/>
+  <path d="M 48.000 47.000 L 59.000 36.000 L 63.000 40.000 L 52.000 51.000 L 48.000 47.000 Z" fill="none" stroke="#17191c" stroke-width="2.00" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
