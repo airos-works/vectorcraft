@@ -1,0 +1,46 @@
+[package]
+name = "vectorcraft-haiku"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+description = "VectorCraft for air/OS and Haiku: the egui front end in native BWindows"
+
+# The workspace's lints: the native host is reached through `unsafe` FFI, confined to
+# `src/host.rs` (`#![allow(unsafe_code)]` there). Everything else denies it.
+[lints]
+workspace = true
+
+[[bin]]
+name = "VectorCraft"
+path = "src/main.rs"
+
+[dependencies]
+vectorcraft-engine = { workspace = true, features = ["bundled-fonts"] }
+vectorcraft-ui-egui = { workspace = true }
+vectorcraft-text = { workspace = true }
+vectorcraft-render = { workspace = true }
+egui = { workspace = true }
+serde_json = { workspace = true }
+log = { workspace = true }
+# The log file's dates (the desktop app's logging.rs, shared by path).
+chrono = { workspace = true }
+# Pictures copied to and pasted from the clipboard (PNG, and other bitmaps turned into PNG).
+image = { workspace = true }
+# The worker pool, capped (src/services.rs); already in the build through the image codecs.
+rayon = "1"
+# Printing (src/print.rs): the print-ready PDF's pages rasterised for the print kit, as the other
+# Craft hosts for air/OS draw them.
+hayro = "0.7.1"
+
+[target.'cfg(target_os = "haiku")'.dependencies]
+# The GPU renderer (src/gpu.rs, src/present.rs): egui drawn with Vulkan, as the other Craft hosts
+# for air/OS do it.
+wgpu = { version = "30", default-features = false, features = ["std", "wgsl", "vulkan"] }
+egui-wgpu = { version = "0.37", default-features = false }
+# The raw Vulkan device, to import the screen's frame buffer (src/scanout.rs); the version wgpu-hal uses.
+ash = "0.38"
+pollster = "1"
+
+[build-dependencies]
+cc = "1"
