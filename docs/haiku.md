@@ -25,6 +25,20 @@ WordCraft's hosts are its templates), and lives in Deskbar's Media folder.
   one; `cpu` never starts Vulkan. A device lost or failing while VectorCraft runs switches every
   window to the rasteriser at the next frame; the documents stay open and the status bar says so.
   Help › System Info names the adapter in use.
+- **Small GPUs** (since `0.21.0~airos1-3`). The device asks for the adapter's own limits, with
+  textures capped at 16384 px, instead of egui-wgpu's default (WebGPU's limits: 8192 px textures,
+  8 colour attachments), which the arm64 boards' GPUs refuse (V3DV on the Raspberry Pi 4: 4096 px
+  textures, 4 attachments), sending them to the rasteriser. On the X399's NVK it gets 16384 px
+  textures (8192 before) and otherwise the adapter's limits. The adapter is the first discrete GPU,
+  else the first integrated one, that can draw the windows (BGRA render targets, compute for the
+  presenter's frame comparison, textures of 2048 px or more); every adapter passed over is logged
+  with the reason (`GPU adapter … not used: …`), and the limits the device got are logged
+  (`GPU device: textures … px, …`). An egui texture larger than the device takes is uploaded at a
+  fraction of its size (logged) rather than raising a wgpu error that would lose the device
+  (`src/texture_fit.rs`). `VECTORCRAFT_GPU_LIMITS=small` creates the device with a small GPU's
+  limits (wgpu's downlevel ones with 4096 px textures) to check this on a big GPU: on the X399
+  (7 November 2026: open an SVG, draw a rectangle, zoom, a window screenshot) it drew on Vulkan
+  with no GPU error, the same window as with the normal limits to one level per channel.
 - **What runs on the GPU, and what doesn't.** Upstream's canvas is rasterised on the processor
   (vello_cpu, `crates/render`): on every desktop the GPU only draws the interface and composites
   the canvas image it is given, so here too the GPU draws egui (panels, the canvas texture,

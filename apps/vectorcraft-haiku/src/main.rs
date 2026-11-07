@@ -23,6 +23,7 @@ mod native_menu;
 mod print;
 mod raster;
 mod tablet;
+mod texture_fit;
 mod viewports;
 
 #[cfg(target_os = "haiku")]
