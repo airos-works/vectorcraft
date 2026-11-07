@@ -1,5 +1,5 @@
 name vectorcraft
-version 0.21.0~airos1-1
+version 0.21.0~airos1-2
 architecture x86_64
 summary "Vector illustration app"
 description "VectorCraft for air/OS: the Rust vector illustration app with native windows, menus, file panels, clipboard, printing and pen tablets; Vulkan rendering on supported hardware and a software fallback."

@@ -77,6 +77,12 @@ WordCraft's hosts are its templates), and lives in Deskbar's Media folder.
 - **Updates.** The package is updated by SoftwareUpdater; Help › Check for Updates is left out of
   the menu bar and the command answers that SoftwareUpdater updates VectorCraft. The community links
   stay.
+- **No ArtCraft marks** (since `0.21.0~airos1-2`). This port is a published modified version, so
+  as `docs/brand/LICENSE-brand.txt` requires, the mark files are removed from this repository
+  (`docs/brand/README.md`) and the About box's "Part of ArtCraft" credit says instead that the
+  port is based on VectorCraft by the ArtCraft team and is not an ArtCraft product. The app bar
+  and About box already showed VectorCraft's own icon, not the ArtCraft mark. Links to
+  getartcraft.com and the Discord stay.
 
 Not done: the system's colour management (Haiku keeps no monitor profiles; the canvas is sRGB),
 pinch zoom (air/OS touchpads have no pinch gesture), and the Media Kit (VectorCraft plays and

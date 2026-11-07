@@ -62,12 +62,13 @@ fn about_tab(app: &mut VectorcraftApp, ui: &mut egui::Ui) {
     ui.add_space(12.0);
     crate::community::links(app, ui);
     ui.add_space(12.0);
-    ui.label(
-        egui::RichText::new(tl!(
-            "Part of ArtCraft. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono (OFL). Icons: Lucide (ISC) + VectorCraft."
-        ))
-        .size(11.0),
-    );
+    // air/OS builds are a modified version: LICENSE-brand.txt lets them say, in plain text, what
+    // they are based on, but not present themselves as part of ArtCraft.
+    #[cfg(target_os = "haiku")]
+    let credits = "Based on VectorCraft by the ArtCraft team; this air/OS port is not an ArtCraft product. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono (OFL). Icons: Lucide (ISC) + VectorCraft.";
+    #[cfg(not(target_os = "haiku"))]
+    let credits = tl!("Part of ArtCraft. MIT OR Apache-2.0. Fonts: Source Sans 3, Inter, JetBrains Mono (OFL). Icons: Lucide (ISC) + VectorCraft.");
+    ui.label(egui::RichText::new(credits).size(11.0));
     // The GPU the window renders with, for bug reports (Preferences › Performance picks it).
     if let Some(adapter) = &app.graphics_adapter {
         ui.add_space(6.0);
